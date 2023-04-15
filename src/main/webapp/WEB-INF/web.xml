@@ -19,4 +19,12 @@
         <servlet-name>ms</servlet-name>
         <url-pattern>/ms</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getUsers</servlet-name>
+        <servlet-class>com.example.chat.GetUsersServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getUsers</servlet-name>
+        <url-pattern>/get-users</url-pattern>
+    </servlet-mapping>
 </web-app>

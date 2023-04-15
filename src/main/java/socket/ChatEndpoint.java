@@ -12,6 +12,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
+import javax.ws.rs.HeaderParam;
 
 @ServerEndpoint(value = "/chat",  encoders = {MessageEncoder.class}, decoders = {MessageDecoder.class})
 public class ChatEndpoint {
@@ -21,6 +22,7 @@ public class ChatEndpoint {
     @OnOpen
     public void onOpen(Session session){
         this.session = session;
+        //session.getUserProperties().put("user_id", userId);
         sessionList.add(session);
     }
     @OnClose

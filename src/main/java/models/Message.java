@@ -5,6 +5,7 @@ public class Message {
     private int userId;
     private int chatId;
     private String text;
+
     public Message(String userName, int userId, int chatId, String text){
         this.userName = userName;
         this.chatId = chatId;
