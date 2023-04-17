@@ -27,4 +27,12 @@
         <servlet-name>getUsers</servlet-name>
         <url-pattern>/get-users</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getChats</servlet-name>
+        <servlet-class>com.example.chat.GetChatsServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getChats</servlet-name>
+        <url-pattern>/get-chats</url-pattern>
+    </servlet-mapping>
 </web-app>
