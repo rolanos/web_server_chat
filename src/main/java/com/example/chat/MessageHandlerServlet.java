@@ -30,8 +30,9 @@ public class MessageHandlerServlet extends HttpServlet {
             String ownerID = req.getParameter("owner_id");
             String chatID = req.getParameter("chat_id");
             String text = req.getParameter("text");
+            String dispatch = req.getParameter("dispatch");
             try {
-                statement.executeQuery("INSERT INTO messages (owner_id, chat_id, text, user_name) VALUES (" + ownerID + ", " + chatID + ", " + "'" + text + "'" + ", " + "'" + userName + "'" +");");
+                statement.executeQuery("INSERT INTO messages (owner_id, chat_id, text, user_name, dispatch) VALUES (" + ownerID + ", " + chatID + ", " + "'" + text + "'" + ", " + "'" + userName + "'"+ "," + "'" + dispatch + "'" + ");");
             } catch (Exception e) {
                 e.printStackTrace();
             }

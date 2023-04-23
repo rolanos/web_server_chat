@@ -43,7 +43,7 @@ public class ChatEndpoint {
             URL url = new URL("http://localhost:8080/ms");
             HttpURLConnection connection =  (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("POST");
-            String urlParameters = "userName=" + message.getUserName() + "&owner_id=" + message.getUserID() + "&chat_id=" + message.getChatID() + "&text=" + message.getText();
+            String urlParameters = "userName=" + message.getUserName() + "&owner_id=" + message.getUserID() + "&chat_id=" + message.getChatID() + "&text=" + message.getText() + "&dispatch=" + message.getDispatch();
             connection.setDoOutput(true);
             connection.getOutputStream().write(urlParameters.getBytes("UTF-8"));
             if (connection.getResponseCode() != 200) {

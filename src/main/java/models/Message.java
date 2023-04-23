@@ -26,4 +26,7 @@ public class Message {
     public String getText(){
         return this.text;
     }
+    public Date getDispatch(){
+        return this.dispatch;
+    }
 }
