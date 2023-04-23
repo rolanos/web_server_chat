@@ -35,4 +35,12 @@
         <servlet-name>getChats</servlet-name>
         <url-pattern>/get-chats</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>getChatContent</servlet-name>
+        <servlet-class>com.example.chat.GetChatContent</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>getChatContent</servlet-name>
+        <url-pattern>/get-chats-content</url-pattern>
+    </servlet-mapping>
 </web-app>
