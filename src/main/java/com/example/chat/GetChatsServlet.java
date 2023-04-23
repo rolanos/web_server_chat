@@ -32,7 +32,7 @@ public class GetChatsServlet extends HttpServlet {
                 response.setContentType("application/json");
                 List<Chat> chatList = new ArrayList<Chat>();
                 while (rs.next()){
-                    Chat nextchat = new Chat(rs.getInt("id"), rs.getString("name"), rs.getInt("participant_id"));
+                    Chat nextchat = new Chat(rs.getInt("id"), rs.getString("name"));
                     chatList.add(nextchat);
                 }
                 Gson gson = new Gson();
