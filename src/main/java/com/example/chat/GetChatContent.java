@@ -1,6 +1,7 @@
 package com.example.chat;
 
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -30,10 +31,10 @@ public class GetChatContent extends HttpServlet {
                 response.setContentType("application/json");
                 List<Message> chatList = new ArrayList<Message>();
                 while (rs.next()){
-                    Message nextMessage = new Message(rs.getString("user_name"), rs.getInt("owner_id"), rs.getInt("chat_id"), rs.getString("text"),  rs.getDate("dispatch"));
+                    Message nextMessage = new Message(rs.getString("user_name"), rs.getInt("owner_id"), rs.getInt("chat_id"), rs.getString("text"),  Date.valueOf(rs.getString("dispatch")));
                     chatList.add(nextMessage);
                 }
-                Gson gson = new Gson();
+                Gson gson = new GsonBuilder().setDateFormat("YYYY-MM-dd").create();
                 String result = gson.toJson(chatList);
                 response.getWriter().write(result);
             } catch (Exception e) {
