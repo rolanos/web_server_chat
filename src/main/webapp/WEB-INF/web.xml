@@ -43,4 +43,12 @@
         <servlet-name>getChatContent</servlet-name>
         <url-pattern>/get-chats-content</url-pattern>
     </servlet-mapping>
+    <servlet>
+        <servlet-name>admin</servlet-name>
+        <servlet-class>com.example.chat.AdminServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>admin</servlet-name>
+        <url-pattern>/admin</url-pattern>
+    </servlet-mapping>
 </web-app>

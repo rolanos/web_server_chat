@@ -1,6 +1,7 @@
 package com.example.chat;
 
 import com.google.gson.Gson;
+import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
@@ -36,6 +37,27 @@ public class GetUsersServlet extends HttpServlet {
                 Gson gson = new Gson();
                 String result = gson.toJson(userList);
                 response.getWriter().write(result);
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            Class.forName("org.postgresql.Driver");
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/chatdb", "postgres", "1234");
+            Statement statement = connection.createStatement();
+            String name = req.getParameter("name");
+            try {
+                ResultSet rs = statement.executeQuery("INSERT INTO users (name) values " + "(" +"'"+ name + "'" + ")"+ ";");
             } catch (Exception e) {
                 e.printStackTrace();
             }
