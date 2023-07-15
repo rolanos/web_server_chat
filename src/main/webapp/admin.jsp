@@ -22,7 +22,7 @@
     <label>Название канала:</label>
     <input type="text" name="chatName" required>
     <br><br>
-    <input type="submit" value="Создать пользователя">
+    <input type="submit" value="Добавить пользователя в канал">
 </form>
 <table>
     <thead>
